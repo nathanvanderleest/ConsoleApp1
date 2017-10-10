@@ -10,6 +10,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Initialize MyClass instance with constructor...");
+            MyClass myclass = new MyClass(5);
+            Console.WriteLine("myclass.Number: " + myclass.Number);
+            Console.ReadLine();
         }
     }
 }
