@@ -13,3 +13,12 @@ namespace ConsoleApp1
         }
     }
 }
+
+/// <summary>
+/// Classes are more resource heavy than structs
+/// </summary>
+class Dimensions
+{
+    public double Length;
+    public double Width;
+}
