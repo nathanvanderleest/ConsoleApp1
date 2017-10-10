@@ -19,7 +19,7 @@ namespace ConsoleApp1
         // then the complier will create the one above.
         public MyClass(int number)
         {
-            
+            this.Number = number;
         }
 
         private int _number;
