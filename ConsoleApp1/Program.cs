@@ -14,11 +14,34 @@ namespace ConsoleApp1
     }
 }
 
-/// <summary>
-/// Classes are more resource heavy than structs
-/// </summary>
-class Dimensions
+
+struct Dimensions
 {
     public double Length;
     public double Width;
+
+    public Dimensions(double length, double width)
+    {
+        Length = length;
+        Width = width;
+    }
+
+    public double Diagonal
+    {
+        get
+        {
+            return Math.Sqrt(Length*Length + Width*Width);
+        }
+    }
 }
+
+
+
+/// <summary>
+/// Classes are more resource heavy than structs
+/// </summary>
+//class Dimensions
+//{
+//    public double Length;
+//    public double Width;
+//}
