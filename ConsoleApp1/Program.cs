@@ -10,9 +10,15 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            // Instead of allocating memory on the heap,
+            // the new operator simply calls the appropriate constructor,
+            // according to the parameters passed to it, initializing all fields.
             Dimensions point = new Dimensions(3.7, 5.2);
-            //point.Length = 3.6;
-            //point.Width = 4.5;
+
+            // It is perfectly aceptible to write: (for a struct, not class)
+            //Dimensions point;
+            //point.Length = 3.7;
+            //point.Width = 5.2;
 
 
             Console.WriteLine("Length = " + point.Length);
