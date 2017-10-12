@@ -10,9 +10,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Dimensions point;
-            point.Length = 3.6;
-            point.Width = 4.5;
+            Dimensions point = new Dimensions(3.7, 5.2);
+            //point.Length = 3.6;
+            //point.Width = 4.5;
 
 
             Console.WriteLine("Length = " + point.Length);
