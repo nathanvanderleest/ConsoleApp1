@@ -32,6 +32,11 @@ namespace ConsoleApp1
 
         public int SecondNumber { get; set; }
 
+        public override string ToString()
+        {
+            return "Numer: " + this.Number + ", SecondNumber: " + this.SecondNumber;
+        }
+
         public void ChangeNumber(int x)
         {
             x = x + 1;
