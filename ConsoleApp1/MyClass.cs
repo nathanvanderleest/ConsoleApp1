@@ -30,5 +30,17 @@ namespace ConsoleApp1
             set { _number = value;  }
         }
 
+        public int SecondNumber { get; set; }
+
+        public void ChangeNumber(int x)
+        {
+            x = x + 1;
+        }
+
+        public int ChangeNumberWithRef(ref MyClass x)
+        {
+            return this.Number + x.Number;
+        }
+
     }
 }
