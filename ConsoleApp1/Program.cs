@@ -31,6 +31,8 @@ namespace ConsoleApp1
             MyClass second = new MyClass(4);
             Console.WriteLine("ChangeNumberWithRef(ref myclass.ChangeNumberWithRef(second)...");
             Console.WriteLine(myclass.ChangeNumberWithRef(ref second));
+            Console.WriteLine("myclass.ToString() " + myclass.ToString());
+
             Console.ReadLine();
 
 
