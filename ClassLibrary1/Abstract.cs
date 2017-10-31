@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    // An abstract class cannot be instantiated and function cannot have an implementation
+    // An abstract class cannot be instantiated and functions cannot have implementations
     // functions must be overridden in any non-abstract derived classes
     public abstract class AbstractClass
     {
