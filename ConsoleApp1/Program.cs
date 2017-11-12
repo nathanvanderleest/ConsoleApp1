@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Diagnostics;
 
 namespace ConsoleApp1
 {
@@ -19,20 +20,25 @@ namespace ConsoleApp1
             // asynchronous by using a delegate
             TakesAWhileDelegate dl = TakesAWhile;
 
-            IAsyncResult ar = dl.BeginInvoke(1, 3000, null, null);
-            while(true)
+            dl.BeginInvoke(1, 2000, TakesAWhileCompleted, dl);
+            for(int i = 0; i < 100; i++)
             {
                 Console.Write(".");
-                if(ar.AsyncWaitHandle.WaitOne(50, false))
-                {
-                    Console.WriteLine("Can get the result now");
-                    break;
-                }
+                Thread.Sleep(50);
             }
-            int result = dl.EndInvoke(ar);
-            Console.WriteLine("result: {0}", result);
 
             Console.ReadKey();
+        }
+
+        static void TakesAWhileCompleted(IAsyncResult ar)
+        {
+            if (ar == null) throw new ArgumentNullException("ar");
+
+            TakesAWhileDelegate dl = ar.AsyncState as TakesAWhileDelegate;
+            Trace.Assert(dl != null, "Invaild object type");
+
+            int result = dl.EndInvoke(ar);
+            Console.WriteLine("result: {0}", result);
         }
 
         static int TakesAWhile(int data, int ms)
