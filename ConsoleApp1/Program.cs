@@ -15,7 +15,7 @@ namespace ConsoleApp1
             t1.Start();
 
             Console.WriteLine("Main thread ending now.");
-            //Thread.Sleep(1000);
+            Thread.Sleep(500);
         }
 
         static void ThreadMain()
